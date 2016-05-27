@@ -31,7 +31,7 @@ if (!empty($_POST['cities']) && isset($_POST['cities'])) {
     $newString = implode(' ', $crossArr);
     echo $newString;
 } else {
-    echo 'Пожалуйста, введите названия городов через пробел.';
+    echo 'РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёСЏ РіРѕСЂРѕРґРѕРІ С‡РµСЂРµР· РїСЂРѕР±РµР».';
 }
 ?>
 
@@ -49,45 +49,45 @@ if(
 ) { if (is_numeric($_POST['distance'])) {
     $summ = $_POST['pizza'] + $_POST['drink'] + $_POST['distance'] * 3 + ($_POST['pizza'] +
             $_POST['drink']) * $_POST['promocode'];
-    echo "Стоимость Вашего заказа:".$summ."грн.";
+    echo "РЎС‚РѕРёРјРѕСЃС‚СЊ Р’Р°С€РµРіРѕ Р·Р°РєР°Р·Р°:".$summ."РіСЂРЅ.";
 }
 else
 {
     $flagDrink = $_POST['drink'];
     $flagPizza = $_POST['pizza'];
     $flagPromo = $_POST['promocode'];
-    echo 'Пожалуйста, введите дальность доставки в числовом виде в километрах!';
+    echo 'РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ РґР°Р»СЊРЅРѕСЃС‚СЊ РґРѕСЃС‚Р°РІРєРё РІ С‡РёСЃР»РѕРІРѕРј РІРёРґРµ РІ РєРёР»РѕРјРµС‚СЂР°С…!';
 }
 }
 else
 {
-    echo 'Пожалуйста, сделайте Ваш выбор! Все поля, кроме промокода, обязательны!';
+    echo 'РџРѕР¶Р°Р»СѓР№СЃС‚Р°, СЃРґРµР»Р°Р№С‚Рµ Р’Р°С€ РІС‹Р±РѕСЂ! Р’СЃРµ РїРѕР»СЏ, РєСЂРѕРјРµ РїСЂРѕРјРѕРєРѕРґР°, РѕР±СЏР·Р°С‚РµР»СЊРЅС‹!';
 }
 ?>
 
 <form method='POST'>
     <label>
-        Выберите пиццу: <select name="pizza">
-            <option <?php if ($flagPizza == '40') { echo "selected ";} ?>value="40">C ветчиной</option>
-            <option <?php if ($flagPizza == '45') { echo "selected ";} ?>value="45">С говядиной</option>
-            <option <?php if ($flagPizza == '50') { echo "selected ";} ?>value="50">С салями</option>
-            <option <?php if ($flagPizza == '42') { echo "selected ";} ?>value="42">С грибами</option>
-            <option <?php if ($flagPizza == '35') { echo "selected ";} ?>value="35">Веганская</option>
+        Р’С‹Р±РµСЂРёС‚Рµ РїРёС†С†Сѓ: <select name="pizza">
+            <option <?php if ($flagPizza == '40') { echo "selected ";} ?>value="40">C РІРµС‚С‡РёРЅРѕР№</option>
+            <option <?php if ($flagPizza == '45') { echo "selected ";} ?>value="45">РЎ РіРѕРІСЏРґРёРЅРѕР№</option>
+            <option <?php if ($flagPizza == '50') { echo "selected ";} ?>value="50">РЎ СЃР°Р»СЏРјРё</option>
+            <option <?php if ($flagPizza == '42') { echo "selected ";} ?>value="42">РЎ РіСЂРёР±Р°РјРё</option>
+            <option <?php if ($flagPizza == '35') { echo "selected ";} ?>value="35">Р’РµРіР°РЅСЃРєР°СЏ</option>
         </select>
     </label>
     <label>
-        Выберите напиток: <select name="drink">
-            <option <?php if ($flagDrink == '0') { echo "selected ";} ?>value="0">Без напитка</option>
+        Р’С‹Р±РµСЂРёС‚Рµ РЅР°РїРёС‚РѕРє: <select name="drink">
+            <option <?php if ($flagDrink == '0') { echo "selected ";} ?>value="0">Р‘РµР· РЅР°РїРёС‚РєР°</option>
             <option <?php if ($flagDrink == '13') { echo "selected ";} ?>value="13">Coca-cola</option>
             <option <?php if ($flagDrink == '14') { echo "selected ";} ?>value="14">Fanta</option>
             <option <?php if ($flagDrink == '15') { echo "selected ";} ?>value="15">Sprite</option>
         </select>
     </label>
     <label>
-        Промокод: <input type='checkbox' <?php if ($flagPromo == "0.1") { echo "checked ";} ?>value="0.1" name='promocode'>
+        РџСЂРѕРјРѕРєРѕРґ: <input type='checkbox' <?php if ($flagPromo == "0.1") { echo "checked ";} ?>value="0.1" name='promocode'>
     </label>
     <label>
-        Введите дальность доставки пиццы:<input type='text' name='distance'>
+        Р’РІРµРґРёС‚Рµ РґР°Р»СЊРЅРѕСЃС‚СЊ РґРѕСЃС‚Р°РІРєРё РїРёС†С†С‹:<input type='text' name='distance'>
     </label>
     <input type='submit'>
 </form>
